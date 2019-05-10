@@ -24,6 +24,9 @@ yarn &&
 ln -s ../storage/app/public public/storage && 
 cp .env.example .env && 
 sed -i 's/APP_URL=/APP_URL=http:\/\/$project.test/g' .env && 
+sed -i 's/DB_HOST=127.0.0.1/DB_HOST=mysql/g' .env && 
+sed -i 's/DB_USERNAME=homestead/DB_USERNAME=root/g' .env && 
+sed -i 's/DB_PASSWORD=homestead/DB_PASSWORD=root/g' .env && 
 sed -i 's/DB_DATABASE=default/DB_DATABASE=$project/g' .env && 
 php artisan key:generate"
 
